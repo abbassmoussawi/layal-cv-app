@@ -6,7 +6,7 @@ require_once('../../../private/initialize.php');
 <aside>
 
     <div class="about-me-body">
-        <img src="../../images/l5.PNG" class="about-me-image">
+        <img src="../../images/layal-aboutme.png" class="about-me-image">
         <div class="text-section">
             <p>
                 &nbsp;Highly motivated to secure a challenging position with a well reputed company that offers a
