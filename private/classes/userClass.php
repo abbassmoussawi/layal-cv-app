@@ -10,24 +10,9 @@ class User extends ParentClass
     public $id;
     public $first_name;
     public $type;
-
     public $last_name;
     public $email;
     public $hashed_password;
-
-//     public function __construct($info = [])
-// 	{ 
-        
-//         if(!empty($info)){
-// 			$this->first_name = $info['first_name'];
-// 			$this->last_name = $info['last_name'];
-// 			$this->email = $info['email'];
-// 			$this->type = $info['type'];
-//             $this->hashed_password = $info['hashed_password'] ;
-
-// 	}
-// }
-    
 
 	public function verify_password($password)
 	{

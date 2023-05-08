@@ -7,8 +7,6 @@ class Experience extends ParentClass
     public static $tableName = 'experiences';
     public static $className = 'Experience';
     public static $dbColumns = ['company_name','job_title','start_date','end_date','job_description','skills_gained'];
-
- 
     public $company_name;
     public $job_title;
     public $start_date;
