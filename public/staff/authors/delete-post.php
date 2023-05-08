@@ -7,15 +7,15 @@ $post = Post::find_by_id($id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $post->delete($id);
-    
-    if($post){
+
+    if ($post) {
         redirect_to(url_for('staff/main-author/main-author-posts.php'));
     }
 }
 ?>
 <div class="delete-confirmation">
     <div>
-        <a class="add-link" href="<?= url_for('staff/main-author/main-author-posts.php');?> ">
+        <a class="add-link" href="<?= url_for('staff/main-author/main-author-posts.php'); ?> ">
             &laquo; Back
         </a>
     </div>
@@ -26,4 +26,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <form action="delete-post.php?id=<?php echo $id; ?>" method="POST" />
 <input type="submit" value="Delete" class="button-edited">
 
-<?php  include SHARED_PATH.'/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php'; ?>

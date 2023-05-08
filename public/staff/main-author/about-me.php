@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once('../../../private/initialize.php');
 ?>
@@ -23,4 +23,4 @@ require_once('../../../private/initialize.php');
 
 </aside>
 
-<?php  include SHARED_PATH.'/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php'; ?>

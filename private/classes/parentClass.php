@@ -1,12 +1,12 @@
 <?php
 class ParentClass
 {
-    public static $tableName = '';
-    public static $className = '';
-    public static $dbColumns = [];
-    static public $db;
+	public static $tableName = '';
+	public static $className = '';
+	public static $dbColumns = [];
+	static public $db;
 
-    static public function set_database($database)
+	static public function set_database($database)
 	{
 		self::$db = $database;
 	}
@@ -32,23 +32,23 @@ class ParentClass
 	static public function find_email($email)
 	{
 		$sql = "SELECT * FROM " . static::$tableName . " WHERE email = '$email'";
-		$statement= self::$db->query($sql);
-		$data =  $statement->fetchObject(static::$className);
+		$statement = self::$db->query($sql);
+		$data = $statement->fetchObject(static::$className);
 	}
-	
 
-    static public function verify_user($email,$password)
+
+	static public function verify_user($email, $password)
 	{
-        $sql = "SELECT 1 FROM " . static::$tableName . " WHERE password = '$password' AND email = '$email' AND type='Main_Author'";
-        $statement = self::$db->query($sql);
-        return $statement->fetchObject(static::$className);
+		$sql = "SELECT 1 FROM " . static::$tableName . " WHERE password = '$password' AND email = '$email' AND type='Main_Author'";
+		$statement = self::$db->query($sql);
+		return $statement->fetchObject(static::$className);
 	}
 
 	static public function verify_user_type()
 	{
-        $sql = "SELECT 1 FROM " . static::$tableName . " WHERE type = 'Main_Author'";
+		$sql = "SELECT 1 FROM " . static::$tableName . " WHERE type = 'Main_Author'";
 		$statement = self::$db->query($sql);
-        return $statement->fetchObject(static::$className);
+		return $statement->fetchObject(static::$className);
 	}
 
 	public function attributes()

@@ -3,9 +3,9 @@ session_start();
 require_once('../../private/initialize.php');
 
 
-$emailErr = $passwordErr =  "";
-$email  = $password = "";
-$incorrectInfo="";
+$emailErr = $passwordErr = "";
+$email = $password = "";
+$incorrectInfo = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = check_input($_POST["email"]);
         // check if e-mail address is well-formed
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "Invalid email format";
+            $emailErr = "Invalid email format";
         }
     }
 
@@ -26,19 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $password = $_POST["password"];
     }
-    
-    if($user = User::verify_user($email,$password) ){
-            $_SESSION['main_author'] ="Layal is logged in";
-            redirect_to('index.php');
-      
+
+    if ($user = User::verify_user($email, $password)) {
+        $_SESSION['main_author'] = "Layal is logged in";
+        redirect_to('index.php');
+
         // if($user->verify_password($password)){
         // $_SESSION['main_author'] ="Layal is logged in";
         //  redirect_to('index.php');
         //  }
-    }
-    else{
+    } else {
         $incorrectInfo = "Incorrect Email or password";
-    }        
+    }
 }
 ?>
 <section class="login-frame">
@@ -48,15 +47,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <form action="login.php" method="post">
         <input type="text" name="email" placeholder="Email" required="">
-        <span class="error"><?php echo $emailErr;?></span>
+        <span class="error">
+            <?php echo $emailErr; ?>
+        </span>
 
         <input type="password" name="password" placeholder="Password" required="">
-        <span class="error"> <?php echo $passwordErr;?></span>
+        <span class="error">
+            <?php echo $passwordErr; ?>
+        </span>
 
         <input type="submit" name="submit" value="login" class="button">
 
-        <div class="error"><?= $incorrectInfo;?></div>
+        <div class="error">
+            <?= $incorrectInfo; ?>
+        </div>
 
     </form>
 </section>
-<?php include SHARED_PATH.'/footer.php';?>
+<?php include SHARED_PATH . '/footer.php'; ?>

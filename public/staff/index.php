@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once('../../private/initialize.php');
 ?>
@@ -12,4 +12,4 @@ require_once('../../private/initialize.php');
         to develop strategies to increase the company's revenues.&nbsp;''
     </p>
 </section>
-<?php  include SHARED_PATH.'/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php'; ?>

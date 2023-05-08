@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once('../../../private/initialize.php');
 
@@ -10,9 +10,9 @@ if (isset($_POST['add'])) {
     $info['start_date'] = $_POST['start_date'];
     $info['end_date'] = $_POST['end_date'];
     $info['description'] = $_POST['description'];
-    $education= new Education($info);
+    $education = new Education($info);
     // var_dump($education);
-    $result = $education -> create();
+    $result = $education->create();
     redirect_to('main-author-education.php');
 }
 ?>
@@ -20,7 +20,7 @@ if (isset($_POST['add'])) {
 
 <div class="shared-frame">
     <div>
-        <a class="add-link" href="<?= url_for('staff/main-author/main-author-education.php');?> "> &laquo; Back</a>
+        <a class="add-link" href="<?= url_for('staff/main-author/main-author-education.php'); ?> "> &laquo; Back</a>
     </div>
     <h3 class="exp-title">Add Certificate</h3>
 
@@ -46,4 +46,4 @@ if (isset($_POST['add'])) {
 
     </form>
 </div>
-<?php  include SHARED_PATH.'/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php'; ?>
