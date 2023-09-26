@@ -1,25 +1,29 @@
 <?php
 
-function check_input($data){
+function check_input($data)
+{
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
 }
 
-function url_for($script_path) {
-    // add the leading '/' if not present
-    if($script_path[0] != '/') {
-      $script_path = "/" . $script_path;
-    }
-    return WWW_ROOT . $script_path;
+function url_for($script_path)
+{
+  // add the leading '/' if not present
+  if ($script_path[0] != '/') {
+    $script_path = "/" . $script_path;
   }
-  
-  function redirect_to($url){
-    header("Location:$url");
-  } 
+  return WWW_ROOT . $script_path;
+}
 
-  function dd($data){
-    var_dump($data);
-    die();
-  }
+function redirect_to($url)
+{
+  header("Location:$url");
+}
+
+function dd($data)
+{
+  var_dump($data);
+  die();
+}

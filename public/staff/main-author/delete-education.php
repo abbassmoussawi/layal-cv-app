@@ -2,9 +2,6 @@
 session_start();
 require_once '../../../private/initialize.php';
 
-// if (!isset($_SESSION['author']) || !isset($_SESSION['main_author'])) {
-//     redirect_to(url_for('staff/index.php'));
-// }
 $id = $_GET['id'];
 $education = Education::find_by_id($id);
 
@@ -15,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <div class="delete-confirmation">
     <div>
-        <a class="add-link" href="<?= url_for('staff/main-author/main-author-education.php');?> ">
+        <a class="add-link" href="<?= url_for('staff/main-author/main-author-education.php'); ?> ">
             &laquo; Back</a>
     </div>
     <p>
@@ -25,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </p>
 </div>
 
-<form action="delete-education.php?id=<?=$id;?>" method="post">
+<form action="delete-education.php?id=<?= $id; ?>" method="post">
 
     <input type="submit" value="Delete" class="button-edited">
 
 
-    <?php  include SHARED_PATH.'/footer.php'; ?>
+    <?php include SHARED_PATH . '/footer.php'; ?>

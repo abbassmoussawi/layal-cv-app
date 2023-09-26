@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="delete-confirmation">
 
-    <a class="add-link" href="<?= url_for('staff/main-author/main-author-experience.php');?> ">
+    <a class="add-link" href="<?= url_for('staff/main-author/main-author-experience.php'); ?> ">
         &laquo; Back
     </a>
 
@@ -25,10 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </div>
 
-<form action="delete-experience.php?id=<?=$id;?>" method="post">
+<form action="delete-experience.php?id=<?= $id; ?>" method="post">
 
     <input type="submit" value="Delete" class="button-edited">
 
 </form>
 
-<?php  include SHARED_PATH.'/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php'; ?>

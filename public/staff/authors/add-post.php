@@ -3,26 +3,24 @@ session_start();
 require_once('../../../private/initialize.php');
 
 if (isset($_POST['post'])) {
-    // foreach ($_POST as $file => $description) {
-    //     echo "{$file} : $description" . '<br>';
-    // }
+
     $info = [];
-    $info['title']= $_POST['title'];
+    $info['title'] = $_POST['title'];
     $info['content'] = $_POST['content'];
     $info['author'] = $_POST['author'];
-    $info['time']= $_POST['time'];
+    $info['time'] = $_POST['time'];
 
-    $filename = $info['image_url']= $_FILES["imagename"]["name"];
+    $filename = $info['image_url'] = $_FILES["imagename"]["name"];
     $tempname = $_FILES["imagename"]["tmp_name"];
-    $folder = '../../../images-server/'. $filename;
+    $folder = '../../../images-server/' . $filename;
 
     if (move_uploaded_file($tempname, $folder)) {
         echo "<h3>  Image uploaded successfully!</h3>";
     } else {
         echo "<h3>  Failed to upload image!</h3>";
     }
-    $post= new Post($info);
-    $result = $post ->create();
+    $post = new Post($info);
+    $result = $post->create();
 }
 ?>
 <div class="shared-frame">
@@ -46,10 +44,10 @@ if (isset($_POST['post'])) {
 
 
             <!-- <?php
-        // $authors = Post::find_all();
-        // foreach ($authors as $author) { ?>
+            // $authors = Post::find_all();
+            // foreach ($authors as $author) { ?>
            
-             <option value=""><?php/*$author->author*/;?></option> -->
+             <option value=""><? php /*$author->author*/; ?></option> -->
             <?php //};?>
 
         </select>
@@ -62,4 +60,4 @@ if (isset($_POST['post'])) {
     </form>
 </div>
 
-<?php  include SHARED_PATH.'/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php'; ?>
